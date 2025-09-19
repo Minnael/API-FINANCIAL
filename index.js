@@ -5,8 +5,6 @@ const connectDB = require('./config/db');
 const authRoutes = require('./routes/auth');
 const productRoutes = require('./routes/products');
 
-
-
 connectDB();
 
 const app = express();

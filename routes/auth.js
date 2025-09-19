@@ -54,7 +54,7 @@ router.post('/login', async (req, res) => {
     res.cookie('token', token, {
       httpOnly: true,
       secure: true,
-      sameSite: 'strict',
+      sameSite: 'none',
       maxAge: 3600000 // 1 HORA 
     });
   logger.info(`Login realizado com sucesso para login: ${login}`);
@@ -88,7 +88,7 @@ router.post('/logout', (req, res) => {
   res.clearCookie('token', {
     httpOnly: true,
     secure: true,
-    sameSite: 'strict'
+    sameSite: 'none'
   });
   logger.info('Logout realizado com sucesso.');
   return res.json({ message: 'Logout realizado com sucesso.' });
