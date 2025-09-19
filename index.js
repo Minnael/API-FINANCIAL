@@ -11,8 +11,8 @@ connectDB();
 
 const app = express();
 app.use(cors({
-	origin: 'http://localhost:8081',
-	credentials: true
+  origin: true, // Aceita qualquer origem
+  credentials: true
 }));
 app.use(express.json());
 app.use('/api', authRoutes);
